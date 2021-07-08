@@ -1,10 +1,6 @@
 import React from 'react'
 
-function FruitTray({ addToCart, fruitType, cart, price }) {
-    const numberOfFruit = cart.filter(
-        (fruit) => fruit.type === fruitType
-    ).length
-
+function FruitTray({ addToCart, fruitType, count, price }) {
     const handleClick = () => {
         addToCart({ type: fruitType, price })
     }
@@ -12,7 +8,7 @@ function FruitTray({ addToCart, fruitType, cart, price }) {
     return (
         <div className="App">
             <p>
-                You are buying {numberOfFruit} {fruitType}s
+                You are buying {count} {fruitType}s
             </p>
             <button onClick={handleClick}>Add {fruitType}</button>
         </div>

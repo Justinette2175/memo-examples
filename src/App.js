@@ -20,6 +20,13 @@ function App() {
         setCart((prev) => [...prev, item])
     }
 
+    const getNumberOfFruitsPerType = (fruitType) => {
+        return cart.filter((fruit) => fruit.type === fruitType).length
+    }
+
+    const numberOfApples = getNumberOfFruitsPerType('apple')
+    const numberOfOranges = getNumberOfFruitsPerType('orange')
+
     return (
         <div style={{ padding: '50px' }}>
             <h1>Lighthouse Fruits</h1>
@@ -27,13 +34,13 @@ function App() {
                 <FruitTray
                     addToCart={addToCart}
                     fruitType="apple"
-                    cart={cart}
+                    count={numberOfApples}
                     price={1}
                 />
                 <FruitTray
                     addToCart={addToCart}
                     fruitType="orange"
-                    cart={cart}
+                    count={numberOfOranges}
                     price={2}
                 />
             </div>

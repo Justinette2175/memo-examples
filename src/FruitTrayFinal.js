@@ -15,13 +15,7 @@ function FruitTray({ addToCart, fruitType, cart }) {
         (fruit) => fruit.type === fruitType
     ).length
 
-    // 0)
     const totalForFruitType = price * numberOfFruit
-
-    // 1)
-    // const priceAfterTax = useMemo(()=>{
-    //  return price * 1.15
-    // }, [price]);
 
     useEffect(() => {
         console.log('price after tax has changed', totalForFruitType)
